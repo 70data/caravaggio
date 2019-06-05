@@ -1,0 +1,618 @@
+{
+	"info": {
+		"_postman_id": "ca49b043-516e-44d7-8723-3ebf0db29aed",
+		"name": "MobileTrain",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "service_tree",
+			"item": [
+				{
+					"name": "get status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/tree/status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"tree",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get root",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8000/tree/node/downstream/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"tree",
+								"node",
+								"downstream",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get downstream",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8000/tree/node/downstream/p2p",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"tree",
+								"node",
+								"downstream",
+								"p2p"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get tree_node",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8000/tree/node/p2p.api",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"tree",
+								"node",
+								"p2p.api"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add tree_node",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"description\":\"\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/tree/node/p2p.api.java",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"tree",
+								"node",
+								"p2p.api.java"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update tree_node",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"p2p.api.php\",\n\t\"description\":\"\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/tree/node/p2p.api.php-new",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"tree",
+								"node",
+								"p2p.api.php-new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete tree_node",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8000/tree/node/p2p.api.php-new",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"tree",
+								"node",
+								"p2p.api.php-new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get asset",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8000/tree/asset/24",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"tree",
+								"asset",
+								"24"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add asset",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"type\": \"阿里云\",\n\t\"identity\": \"dev01.bj.aliyun\",\n\t\"node_name\": \"p2p.api.php\"\n}\n"
+						},
+						"url": {
+							"raw": "http://localhost:8000/tree/asset/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"tree",
+								"asset",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update asset",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"type\": \"阿里云\",\n\t\"identity\": \"dev01.bj.aliyun\",\n\t\"node_name\": \"p2p.api.php\"\n}\n"
+						},
+						"url": {
+							"raw": "http://localhost:8000/tree/asset/24",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"tree",
+								"asset",
+								"24"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete asset",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8000/tree/asset/23",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"tree",
+								"asset",
+								"23"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get correlation all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8000/tree/asset/correlation/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"tree",
+								"asset",
+								"correlation",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get correlation by node",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8000/tree/asset/correlation/p2p.api",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"tree",
+								"asset",
+								"correlation",
+								"p2p.api"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add correlation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"identity\": \"dev01.bj.aliyun\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/tree/asset/correlation/p2p.api",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"tree",
+								"asset",
+								"correlation",
+								"p2p.api"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete correlation",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"identity\": \"dev01.bj.aliyun\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/tree/asset/correlation/p2p.api",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"tree",
+								"asset",
+								"correlation",
+								"p2p.api"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get resource list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8000/tree/asset/24/resource/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"tree",
+								"asset",
+								"24",
+								"resource",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get resource",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8000/tree/resource/31",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"tree",
+								"resource",
+								"31"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add resource",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"asset_id\": 24,\n\t\"name\": \"CPU\",\n\t\"tag\": \"size\",\n\t\"value\": \"6\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/tree/resource/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"tree",
+								"resource",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update resource",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"asset_id\": 24,\n\t\"name\": \"CPU\",\n\t\"tag\": \"size\",\n\t\"value\": \"6\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/tree/resource/31",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"tree",
+								"resource",
+								"31"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete resource",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8000/tree/resource/45",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"tree",
+								"resource",
+								"45"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
