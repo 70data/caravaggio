@@ -3,11 +3,19 @@
 import json
 from utils.response import MyResponse
 from ..models.asset import Asset
+from ..models.asset import Correlation
 
 def tree_asset(request):
+    # 查看
+    # GET /tree/asset/ 查看资产
+    if request.method == 'GET':
+        # 处理数据
+        data = Asset().getAssetList()
+        # 拼接返回值
+        response = MyResponse().succeed(data)
     # 增加
     # POST /tree/asset/ 增加资产
-    if request.method == 'POST':
+    elif request.method == 'POST':
         # 解析body数据
         requestData = json.loads(request.body)
         # 处理数据
@@ -62,7 +70,7 @@ def tree_correlation_all(request):
     # GET /tree/asset/tree_correlation/ 查看所有资产
     if request.method == 'GET':
         # 处理数据
-        data = Asset().getIdentityByNode('')
+        data = Correlation().getIdentityByNode('')
         # 拼接返回值
         response = MyResponse().succeed(data)
     # 非法请求
@@ -75,7 +83,7 @@ def tree_correlation(request, node_name):
     # GET /tree/asset/correlation/node_name 基于node_name查看资产
     if request.method == 'GET':
         # 处理数据
-        data = Asset().getIdentityByNode(node_name)
+        data = Correlation().getIdentityByNode(node_name)
         # 拼接返回值
         response = MyResponse().succeed(data)
     # 增加
@@ -84,7 +92,7 @@ def tree_correlation(request, node_name):
         # 解析body数据
         requestData = json.loads(request.body)
         # 处理数据
-        dbStatus = Asset().addCorrelation(node_name, requestData)
+        dbStatus = Correlation().addCorrelation(node_name, requestData)
         # 拼接返回值
         if dbStatus == 'succeed':
             response = MyResponse().succeed({})
@@ -96,7 +104,7 @@ def tree_correlation(request, node_name):
         # 解析body数据
         requestData = json.loads(request.body)
         # 处理数据
-        dbStatus = Asset().deleteCorrelation(node_name, requestData)
+        dbStatus = Correlation().deleteCorrelation(node_name, requestData)
         # 拼接返回值
         if dbStatus == 'succeed':
             response = MyResponse().succeed({})

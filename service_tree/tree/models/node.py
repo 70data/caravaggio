@@ -2,9 +2,9 @@
 
 from utils.db import db_engine
 
-class Node(object):
+class Downstream(object):
 
-    def getNodeDownstream(self, node_name):
+    def getDownstream(self, node_name):
         # 获取连接
         db_conn = db_engine.connect()
         # 生成SQL
@@ -19,7 +19,7 @@ class Node(object):
         for row in result:
             tree_node = {}
             tree_node['id'] = row[0]
-            tree_node['name'] = row[1]
+            tree_node['node_name'] = row[1]
             tree_node['upstream_name'] = row[2]
             tree_node['node_description'] = row[3]
             tree_nodes.append(tree_node)
@@ -27,6 +27,8 @@ class Node(object):
         data = {}
         data['tree_nodes'] = tree_nodes
         return data
+
+class Node(object):
 
     def getNode(self, node_name):
         # 获取连接
@@ -43,7 +45,7 @@ class Node(object):
         for row in result:
             tree_node = {}
             tree_node['id'] = row[0]
-            tree_node['name'] = row[1]
+            tree_node['node_name'] = row[1]
             tree_node['upstream_name'] = row[2]
             tree_node['description'] = row[3]
             tree_nodes.append(tree_node)
@@ -71,7 +73,7 @@ class Node(object):
         return result
 
     def updateNode(self, node_name, requestData):
-        new_node_name = requestData['name']
+        new_node_name = requestData['node_name']
         new_upstream_name = '.'.join(new_node_name.split('.')[:-1])
         new_description = requestData['description']
         # 获取连接

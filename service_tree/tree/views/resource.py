@@ -4,6 +4,19 @@ import json
 from utils.response import MyResponse
 from ..models.resource import Resource
 
+def tree_resource_list(request, asset_id):
+    # 查看
+    # GET /tree/asset/asset_id/resource/ 基于asset_id查看资源
+    if request.method == 'GET':
+        # 处理数据
+        data = Resource().getResourceByAssetid(asset_id)
+        # 拼接返回值
+        response = MyResponse().succeed(data)
+    # 非法请求
+    else:
+        response = MyResponse().void()
+    return response
+
 def tree_resource(request):
     # 增加
     # POST /tree/tree_resource/ 增加资源
@@ -53,19 +66,6 @@ def tree_resource_id(request, resource_id):
             response = MyResponse().succeed({})
         else:
             response = MyResponse().failed('process failed')
-    # 非法请求
-    else:
-        response = MyResponse().void()
-    return response
-
-def tree_resource_list(request, asset_id):
-    # 查看
-    # GET resource/list/asset_id 基于asset_id查看资源
-    if request.method == 'GET':
-        # 处理数据
-        data = Resource().getResourceByAssetid(asset_id)
-        # 拼接返回值
-        response = MyResponse().succeed(data)
     # 非法请求
     else:
         response = MyResponse().void()
