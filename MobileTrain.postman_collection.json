@@ -160,7 +160,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"name\":\"p2p.api.php\",\n\t\"description\":\"\"\n}"
+							"raw": "{\n\t\"node_name\":\"p2p.api.php\",\n\t\"description\":\"\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8000/tree/node/p2p.api.php-new",
@@ -211,6 +211,34 @@
 					"response": []
 				},
 				{
+					"name": "get asset all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8000/tree/asset/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"tree",
+								"asset",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "get asset",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -252,7 +280,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"type\": \"阿里云\",\n\t\"identity\": \"dev01.bj.aliyun\",\n\t\"node_name\": \"p2p.api.php\"\n}\n"
+							"raw": "{\n\t\"source\": \"阿里云\",\n\t\"type\": \"virtual_machine\",\n\t\"identity\": \"dev01.bj.aliyun\",\n\t\"description\": \"\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8000/tree/asset/",
@@ -284,7 +312,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"type\": \"阿里云\",\n\t\"identity\": \"dev01.bj.aliyun\",\n\t\"node_name\": \"p2p.api.php\"\n}\n"
+							"raw": "{\n\t\"source\": \"阿里云\",\n\t\"type\": \"virtual_machine\",\n\t\"identity\": \"dev01.bj.aliyun\",\n\t\"description\": \"dev01.bj.aliyun\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8000/tree/asset/24",
@@ -376,7 +404,7 @@
 							"formdata": []
 						},
 						"url": {
-							"raw": "http://localhost:8000/tree/asset/correlation/p2p.api",
+							"raw": "http://localhost:8000/tree/asset/correlation/p2p",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -386,7 +414,7 @@
 								"tree",
 								"asset",
 								"correlation",
-								"p2p.api"
+								"p2p"
 							]
 						}
 					},
@@ -530,7 +558,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"asset_id\": 24,\n\t\"name\": \"CPU\",\n\t\"tag\": \"size\",\n\t\"value\": \"6\"\n}"
+							"raw": "{\n\t\"asset_id\": 24,\n\t\"resource_type\": \"CPU\",\n\t\"resource_name\": \"CPU\",\n\t\"resource_tag\": \"size\",\n\t\"resource_value\": \"6\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8000/tree/resource/",
@@ -562,7 +590,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"asset_id\": 24,\n\t\"name\": \"CPU\",\n\t\"tag\": \"size\",\n\t\"value\": \"6\"\n}"
+							"raw": "{\n\t\"asset_id\": 24,\n\t\"resource_type\": \"CPU\",\n\t\"resource_name\": \"CPU\",\n\t\"resource_tag\": \"size\",\n\t\"resource_value\": \"6\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8000/tree/resource/31",
@@ -607,6 +635,587 @@
 								"tree",
 								"resource",
 								"45"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "status",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8000/auth/status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8000/auth/user/yuchang",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"user",
+								"yuchang"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"mail\": \"70data@gamil.com\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/auth/user/test",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"user",
+								"test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"mail\": \"test@gamil.com\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/auth/user/test",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"user",
+								"test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8000/auth/user/test",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"user",
+								"test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get permission by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8000/auth/permission/51",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"permission",
+								"51"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add permission",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"server_name\": \"tree\",\n\t\"method\": \"GET\",\n\t\"url\": \"/tree/node/downstream/test\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/auth/permission/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"permission",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete permission",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8000/auth/permission/52",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"permission",
+								"52"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get role by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8000/auth/role/51",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"role",
+								"51"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add role",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"role_name\": \"test\",\n\t\"role_description\": \"\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/auth/role/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"role",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update role by id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"role_name\": \"test\",\n\t\"role_description\": \"test\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/auth/role/53",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"role",
+								"53"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete role",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8000/auth/role/53",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"role",
+								"53"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get role permission by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8000/auth/role/51/permission/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"role",
+								"51",
+								"permission",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add role permission by id",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8000/auth/role/51/permission/55",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"role",
+								"51",
+								"permission",
+								"55"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete role permission by id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8000/auth/role/51/permission/55",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"role",
+								"51",
+								"permission",
+								"55"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user role",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8000/auth/user/yuchang/server/tree/role/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"user",
+								"yuchang",
+								"server",
+								"tree",
+								"role",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add user role",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8000/auth/user/yuchang/server/tree/role/52",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"user",
+								"yuchang",
+								"server",
+								"tree",
+								"role",
+								"52"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user role",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8000/auth/user/yuchang/server/tree/role/52",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"user",
+								"yuchang",
+								"server",
+								"tree",
+								"role",
+								"52"
 							]
 						}
 					},
