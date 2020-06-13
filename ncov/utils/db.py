@@ -3,7 +3,7 @@
 import sqlalchemy
 
 # 全局连接池
-db_engine = sqlalchemy.create_engine('mysql+mysqlconnector://root:Password4Mysql!@39.99.156.174:3306/ncov')
+db_engine = sqlalchemy.create_engine('mysql+mysqlconnector://user:passwd)@ip:port/dbname')
 
 
 def sql_execute(sql):
